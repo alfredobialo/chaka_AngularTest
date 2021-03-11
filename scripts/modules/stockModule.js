@@ -1,5 +1,5 @@
 (function (ng,window){
-    ng.module("stockModule", ["stockModuleApi"])
+    ng.module("stockModule", ["stockApiModule"])
         ;
 
 
