@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chakaApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Chaka Stock Trading - JobTest</title>
+    <meta name="description" content="This just a test for a Job at Chaka.ng" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <link href="css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="css/chaka.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+<body>
+<div class=" bg-light-light shadow-sm bg-white">
+    <div class="container d-flex flex-row justify-content-between align-items-center ">
+        <div class="chaka-navbar flex-column-fluid d-flex justify-content-start align-items-center flex-grow-1">
+            <h1 class="font-size-h1-sm font-size-h1 font-size-h1-lg" ui-sref-active-eq="text-danger">Chaka <sup class="bg-light-primary p-2 font-size-sm">Job
+                Test</sup></h1>
+        </div>
+        <div class="menus flex-grow-1">
+            <a ui-sref="home" class="btn "  ui-sref-active="btn-primary">Home</a><a ui-sref="home" class="btn ">News</a><a class="btn " ui-sref="home">About</a>
+        </div>
+    </div>
+</div>
+<div class="content d-flex flex-column flex-column-fluid  ">
+    <div class="d-flex flex-column-fluid">
+        <div class="container">
+            <div class="mb-3 mb-lg-5">
+                <p class="lead text-muted">Home | News</p>
+            </div>
+            <div class="p-6">
+                <ui-view>
+
+                </ui-view>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="scripts/ng/angular.min.js"></script>
+<script src="scripts/ng/angular-ui-router.min.js"></script>
+<script src="scripts/ng/ui-bootstrap-tpls-3.0.6.min.js"></script>
+<script src="scripts/chakaApp.js"></script>
+<script src="scripts/modules/appLayoutModule.js"></script>
+<script src="scripts/modules/appNavModule.js"></script>
+<script src="scripts/modules/stockModule.js"></script>
+<script src="scripts/modules/stockModule_ApiService.js"></script>
+</body>
+</html>
