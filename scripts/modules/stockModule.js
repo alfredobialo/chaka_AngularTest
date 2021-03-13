@@ -45,7 +45,7 @@
                 scope.loading = true;
                 queue.push(scope.symbol);
                 console.log(queue);
-                return;
+                //return;
                 StockServiceApi.searchSymbol(scope.symbol)
                     .then(function (response) {
                         scope.loading = false;
