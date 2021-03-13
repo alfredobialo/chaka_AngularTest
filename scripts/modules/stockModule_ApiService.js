@@ -3,12 +3,14 @@
         .factory("StockServicesApi", ["$http", StockServiceApi])
     ;
 
-    // Stock Api: base url and api Token are made available sin
-    function StockServiceApi($http) {
-        var baseUrl  = "https://www.alphavantage.co/query&function?=", token ="&apikey=R0VELXWZN90OIL1P";
+    // Stock Api: base url and api Token are made visible since we don't have a keyvault
 
-        function searchStock(symbol){
-            var url  = baseUrl+"SYMBOL_SEARCH&keywords="+symbol+token;
+    function StockServiceApi($http) {
+        var baseUrl  = "https://www.alphavantage.co/query?function=", token ="&apikey=R0VELXWZN90OIL1P";
+
+        function getStockQuote(symbol){
+            var url  = baseUrl+"GLOBAL_QUOTE&symbol="+symbol+token;
+            console.log(url);
             return $http.get(url);
         }
         function getStockDetail(symbol){
@@ -16,7 +18,7 @@
             return $http.get(url);
         }
         return {
-            searchSymbol : searchStock,
+            searchSymbol : getStockQuote,
             getStockDetail : getStockDetail,
 
         }

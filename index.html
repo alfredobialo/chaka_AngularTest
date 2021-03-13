@@ -14,10 +14,11 @@
 
 </head>
 <body>
-<div class=" bg-light-light shadow-sm bg-white">
+<div class=" bg-white shadow-sm bg-white">
     <div class="container d-flex flex-row justify-content-between align-items-center ">
         <div class="chaka-navbar flex-column-fluid d-flex justify-content-start align-items-center flex-grow-1">
-            <h1 class="font-size-h1-sm font-size-h1 font-size-h1-lg" ui-sref-active-eq="text-danger">Chaka <sup class="bg-light-primary p-2 font-size-sm">Job
+            <h1 class="font-size-h1-sm font-size-h1 font-size-h1-lg" ui-sref-active-eq="text-danger">Chaka <sup
+                    class="bg-light-danger p-2 font-size-sm">Job
                 Test</sup></h1>
         </div>
         <div class="menus flex-grow-1">
@@ -27,19 +28,57 @@
 </div>
 <div class="content d-flex flex-column flex-column-fluid  ">
     <div class="d-flex flex-column-fluid">
-        <div class="container">
-            <div class="mb-3 mb-lg-5">
-                <p class="lead text-muted">Home | News</p>
-            </div>
-            <div class="p-6">
+        <div class="container bg-white">
+            <div class="">
                 <ui-view>
 
                 </ui-view>
+
+                <div class="bg-white py-10 py-lg-17 px-12 px-lg-17">
+                    Testing Ground : Stock Details
+                    <div class="">
+                        <h4 class="font-weight-bolder font-size-h4-xxl font-size-h4-sm">[Company Name] ([symbol])</h4>
+                        <h1 class="font-weight-bolder font-size-h1-xxl font-size-h1-sm">[mainGain]
+                            <span class="font-size-h6-xxl font-size-h6-sm">+1.431</span>
+                            <span class="font-size-h6-xxl font-size-h6-sm text-danger">(-0.431)</span>
+                            <br>
+                            <span class="font-size-xs text-dark-65">IEX real time price as of [3:15:01 PM].</span>
+                        </h1>
+                        <div class="mt-10">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <h1>Chart Goes Here</h1>
+                                    <div class="chart-container">
+
+                                    </div>
+                                    <div class="chart-container-bar-chart">
+
+                                    </div>
+                                    <div class="chart-time-series d-flex justify-content-start align-items-center">
+                                        <a href="" class="py-4 px-4 bg-light lead">1D</a>
+                                        <a href="" class="py-4 px-4 bg-light lead">1M</a>
+                                        <a href="" class="py-4 px-4 bg-light lead">3M</a>
+                                        <a href="" class="py-4 px-4 bg-light lead">6M</a>
+                                        <a href="" class="py-4 px-4 bg-light lead">YTD</a>
+                                        <a href="" class="py-4 px-4 bg-light lead">1Y</a>
+                                        <a href="" class="py-4 px-4 bg-light lead">2Y</a>
+                                        <a href="" class="py-4 px-4 bg-light lead">5Y</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
+
         </div>
     </div>
 
+
 </div>
+<script src="scripts/lodash.min.js"></script>
 <script src="scripts/ng/angular.js"></script>
 <script src="scripts/ng/angular-ui-router.min.js"></script>
 <script src="scripts/chakaApp.js"></script>

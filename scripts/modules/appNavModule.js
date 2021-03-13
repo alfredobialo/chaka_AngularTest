@@ -20,7 +20,16 @@
                 url: "/",
                 views: {
                     "": {
-                        template: "\n<div>\n    <h1>Home Page</h1>\n    <div class=\"row\">\n        <div class=\"col-xl-4\">\n            <div class=\"card card-custom bg-gray-100 gutter-b card-stretch\">\n                <div class=\"card-header bg-danger py-5\">\n                    <div class=\"card-title text-white\">List Of Stocks</div>\n                </div>\n                <div class=\"card-body p-0 position-relative overflow-hidden\">\n                    <div class=\"p-6\">\n                       \n                    </div>\n                </div>\n            </div>\n\n\n        </div>\n        <div class=\"col-7  col-lg-9\">\n\n\n        </div>\n\n    </div>\n</div>"
+                        template: "<div class=\'mb-6 mb-lg-10 bg-white mt-17\'>\n    <chaka-stock-item-list\n            symbols=\'[\"BNGO\", \"AAPL\", \"INTC\", \"IBM\", \"GEVO\", \"FCEL\",\"SNAP\",\"AAL\",\"OCGN\",\"PLTR\",\"GE\"]\'></chaka-stock-item-list>\n\n</div>\n"
+                    }
+                }
+            },
+            stockState = {
+                name: "stock",
+                url: "/stock?symbol",
+                views: {
+                    "": {
+                        template: "<h1>State params</h1>\n"
                     }
                 }
             },
@@ -29,7 +38,7 @@
                 url: "/about-me",
                 views: {
                     "" : {
-                        template:"<my-directive data=\'Alfred Obialo\'></my-directive>\n"
+                        template:"\n<div class=\'\'>\n    <my-directive data=\'Alfred Obialo\'></my-directive>\n</div>\n"
                     }
                 }
             },
@@ -50,6 +59,7 @@
             .state(homeState)
             .state(aboutState)
             .state(newsState)
+            .state(stockState)
 
         ;
         $urlProvider.otherwise("/home")
