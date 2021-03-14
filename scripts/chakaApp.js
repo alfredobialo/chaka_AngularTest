@@ -1,7 +1,7 @@
 (function (ng, window) {
     ng.module("chakaApp", [ "ui.router", "appNavModule","stockModule"])
         .directive("myDirective", [MyDirectiveFunction])
-        .directive("progressBar", ["ProgressBarService",ProgressBar])
+        .directive("progressBar", [ProgressBar])
         .factory("ProgressBarService", ["$rootScope",ProgressBarService])
         .run(["$state","$rootScope",RunApp])
       ;
@@ -20,22 +20,16 @@
         return {
             show: function(){
                 $rootScope.processing = true;
-                console.log("show progress called");
             },
             hide: function(){
                 $rootScope.processing = false;
-                console.log("hide progress called");
             }
         }
     }
-    function ProgressBar(ProgressBarService) {
+    function ProgressBar() {
         return  {
             replace:true,
             restrict:"E",
-           /* controller: ["$scope","$rootScope",function(scope, $rootScope){
-               scope.processing = $rootScope.processing ;
-            }],*/
-            //language=Angular2HTML
             template  : "<div ng-if=\'processing\' class=\"progressbar-header-container\">\n    <div class=\"asom-progress\">\n        <div class=\"indeterminate\"></div>\n    </div>\n</div>"
         }
 
