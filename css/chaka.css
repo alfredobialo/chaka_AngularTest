@@ -45,11 +45,12 @@ div.stock-item:hover .valuation {
  }
 div.chart-container{
     height : 350px;
-    background-color: #bfeadf;
+    background-color: #d5e0de;
     border : dotted 1px #7fb5ac;
 }
 div.chart-container-bar-chart{
     height : 220px;
+    background-color: #e8ebee;
 }
 /* Progress Bar */
 div.asom-progress {
