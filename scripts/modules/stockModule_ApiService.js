@@ -10,7 +10,6 @@
 
         function getStockQuote(symbol){
             var url  = baseUrl+"GLOBAL_QUOTE&symbol="+symbol+token;
-            console.log(url);
             return $http.get(url);
         }
         function getStockDetail(symbol){

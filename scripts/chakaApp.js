@@ -1,7 +1,9 @@
 (function (ng, window) {
     ng.module("chakaApp", [ "ui.router", "appNavModule","stockModule"])
         .directive("myDirective", [MyDirectiveFunction])
-        .run(["$state",RunApp])
+        .directive("progressBar", ["ProgressBarService",ProgressBar])
+        .factory("ProgressBarService", ["$rootScope",ProgressBarService])
+        .run(["$state","$rootScope",RunApp])
       ;
 
     function MyDirectiveFunction() {
@@ -10,12 +12,38 @@
             scope: {
                 data: "@?"
             },
-            template: "\n    <div class=\"row\">\n        <div class=\"col-xl-4\">\n            <div class=\"card card-custom bg-white gutter-b card-stretch shadow-sm\">\n                <div class=\"card-header bg-danger py-5\">\n                    <div class=\"card-title text-white\">Built with AngularJs 1.5</div>\n                </div>\n                <div class=\"card-body bg-white p-0 position-relative overflow-hidden\">\n                    <div class=\"p-6\">\n                        <div class=\'lead\'>\n                            By <span class=\'font-weight-bold text-danger lead\'>{{data }}</span> \n                            <br>\n                            Email: alfrdcsdinc@gmail.com\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n\n        </div>\n\n    </div>\n"
+            template: "\n    <div class=\"row\">\n        <div class=\"col-xl-4\">\n            <div class=\"card card-custom bg-light gutter-b card-stretch \">\n                <div class=\"card-header bg-danger py-5\">\n                    <div class=\"card-title text-white\">Built with AngularJs 1.5</div>\n                </div>\n                <div class=\"card-body bg-white p-0 position-relative overflow-hidden\">\n                    <div class=\"p-6\">\n                        <div class=\'lead\'>\n                            By <span class=\'font-weight-bold text-danger lead\'>{{data }}</span> \n                            <br>\n                            Email: alfrdcsdinc@gmail.com\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n\n        </div>\n\n    </div>\n"
         }
     }
+    function ProgressBarService($rootScope){
 
-    function RunApp($state){
-        $state.go("home");
+        return {
+            show: function(){
+                $rootScope.processing = true;
+                console.log("show progress called");
+            },
+            hide: function(){
+                $rootScope.processing = false;
+                console.log("hide progress called");
+            }
+        }
+    }
+    function ProgressBar(ProgressBarService) {
+        return  {
+            replace:true,
+            restrict:"E",
+           /* controller: ["$scope","$rootScope",function(scope, $rootScope){
+               scope.processing = $rootScope.processing ;
+            }],*/
+            //language=Angular2HTML
+            template  : "<div ng-if=\'processing\' class=\"progressbar-header-container\">\n    <div class=\"asom-progress\">\n        <div class=\"indeterminate\"></div>\n    </div>\n</div>"
+        }
+
+    }
+
+    function RunApp($state, $rootScope){
+        //$state.go("home");
+        $rootScope.processing = false;
     }
 
 })(angular, window);

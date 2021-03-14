@@ -28,6 +28,14 @@ div.stock-item:hover .stock-name {
     font-size:0.89rem;
     color:red;
 }
+div.expand-content{
+    height: auto !important;
+    overflow: unset !important;
+}
+div.contract-content{
+     height: 60px !important;
+     overflow: hidden !important;
+ }
 div.stock-item:hover .valuation-pt {
     color: #eac783;
     font-weight: bold;
@@ -37,9 +45,103 @@ div.stock-item:hover .valuation {
  }
 div.chart-container{
     height : 350px;
-    background-color: #bfeadf;
+    background-color: #d5e0de;
     border : dotted 1px #7fb5ac;
 }
 div.chart-container-bar-chart{
     height : 220px;
+    background-color: #e8ebee;
+}
+/* Progress Bar */
+div.asom-progress {
+    position: relative;
+    height: 5px;
+    display: block;
+    width: 100%;
+    background-color: #c46f94;
+    border-radius: 2px;
+    background-clip: padding-box;
+    margin: 0;
+    overflow: hidden; }
+div.asom-progress .determinate {
+    position: absolute;
+    background-color: inherit;
+    top: 0;
+    bottom: 0;
+    background-color: #ae2323;
+    transition: width .3s linear; }
+div.asom-progress .indeterminate {
+    background-color: #1e52cf; }
+div.asom-progress .indeterminate:before {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    will-change: left, right;
+    -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+    animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite; }
+div.asom-progress .indeterminate:after {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    will-change: left, right;
+    -webkit-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+    animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+    -webkit-animation-delay: 1.15s;
+    animation-delay: 1.15s; }
+
+@-webkit-keyframes indeterminate {
+    0% {
+        left: -35%;
+        right: 100%; }
+    60% {
+        left: 100%;
+        right: -90%; }
+    100% {
+        left: 100%;
+        right: -90%; } }
+@keyframes indeterminate {
+    0% {
+        left: -35%;
+        right: 100%; }
+    60% {
+        left: 100%;
+        right: -90%; }
+    100% {
+        left: 100%;
+        right: -90%; } }
+@-webkit-keyframes indeterminate-short {
+    0% {
+        left: -200%;
+        right: 100%; }
+    60% {
+        left: 107%;
+        right: -8%; }
+    100% {
+        left: 107%;
+        right: -8%; } }
+@keyframes indeterminate-short {
+    0% {
+        left: -200%;
+        right: 100%; }
+    60% {
+        left: 107%;
+        right: -8%; }
+    100% {
+        left: 107%;
+        right: -8%; } }
+
+div.progressbar-header-container{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 59;
+    margin: 0;
+    padding: 0;
 }
